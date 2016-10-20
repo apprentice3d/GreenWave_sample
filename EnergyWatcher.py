@@ -116,7 +116,7 @@ def createWindow(ui_class):
 def updateGUIuponSelection():
     item = treeView.currentItem()
     frame = int(rt.sliderTime)
-    if item.childCount() == 0:
+    if item and item.childCount() == 0:
         beacon = beacon_references[item]
         # bakeKeysFor(beacon)
         plot.clear()
@@ -144,3 +144,4 @@ if __name__ == "__main__":
     eng_window.show()
     rt.registerTimeCallback(updateBeaconPosition)
     # instance.close()
+    #TODO: add selection in tree view upon element selection in scene and vice-versa
